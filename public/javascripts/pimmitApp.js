@@ -1,4 +1,4 @@
-var app = angular.module('pimmitApp', ['ngRoute', 'ngResource']).run(function($rootScope) {
+var app = angular.module('pimmitApp', ['ngRoute', 'ngResource']).run(function($rootScope, $http) {
 	$rootScope.authenticated = false;
 	$rootScope.current_user = '';
 	
@@ -22,7 +22,7 @@ app.config(function($routeProvider){
 			controller: 'authController'
 		})
 		//the signup display
-		.when('/register', {
+		.when('/signup', {
 			templateUrl: 'register.html',
 			controller: 'authController'
 		});
@@ -46,7 +46,7 @@ app.controller('mainController', function(postService, $scope, $rootScope){
 	};
 });
 
-app.controller('authController', function($scope, $http, $rootScope, $location){
+app.controller('authController', function($scope, $rootScope, $http, $location){
   $scope.user = {username: '', password: ''};
   $scope.error_message = '';
 
