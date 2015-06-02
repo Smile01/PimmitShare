@@ -1,8 +1,60 @@
 <div class="clearfix">
   <form ng-Submit="post()" ng-show="authenticated">
+  	<div> 
+  		  <input class="btn submit-btn pull-right" type="submit" value="Post!" />
+	</div> 
     <h4>{{current_user}} shares</h4>
-    <textarea required class="form-control" maxlength="200" rows="3" placeholder="SHARE something" ng-model="newPost.text"></textarea>
-    <input class="btn submit-btn pull-right" type="submit" value="Post!" />
+    <div> 
+    	 <div class="dropdown">
+		Pikc Catagory <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Tools & Gardening
+			    <span class="caret"></span></button>
+			    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">category1</a></li>
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">category2</a></li>
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">category3</a></li>
+			      <li role="presentation" class="divider"></li>
+			      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">category1</a></li>
+			    </ul>
+		</div>
+    </div>
+    <div> 
+    	<div class="dropdown">
+		  <div class="input-group">
+		  <span class="input-group-addon" id="basic-addon1">@</span>
+		  <input type="text" class="form-control" placeholder="$ Price" aria-describedby="basic-addon1">
+		  <input type="text" class="form-control" placeholder="Cross Street" aria-describedby="basic-addon1">
+		  <input type="text" class="form-control" placeholder="Zip" aria-describedby="basic-addon1">
+		</div>
+
+		</div>
+    </div>
+    <div> 
+    	<textarea required class="form-control" maxlength="200" rows="3" placeholder="SHARE something" ng-model="newPost.text"></textarea>
+    </div> 
+
+	<div> 
+			<input type="text" class="form-control" placeholder="Provide Link" aria-describedby="basic-addon1">
+	</div> 
+	<div> 
+			<input type="text" class="form-control" placeholder="Availibility" aria-describedby="basic-addon1">
+	</div> 
+	<div class="fileupload fileupload-new" data-provides="fileupload">
+		Add Image :   <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"></div>
+		  <div>
+		    <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+		    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+		  </div>
+		</div>
+
+	<div> 
+		<input type="text" class="form-control" placeholder="Email Address" aria-describedby="basic-addon1">	 
+	</div>
+	 <div> 
+		<input type="text" class="form-control" placeholder="Enter Email Address Again" aria-describedby="basic-addon1">	 
+	</div>
+    <div> 
+  		  <input class="btn submit-btn pull-right" type="submit" value="Post!" />
+	</div> 
   </form>
 </div>
 <div id="post-stream">
