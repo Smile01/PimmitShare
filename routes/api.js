@@ -26,10 +26,20 @@ router.use('/posts', isAuthenticated);
 router.route('/posts')
 	//creates a new post
 	.post(function(req, res){
-
+		console.log('debug post Insert');
 		var post = new Post();
-		post.text = req.body.text;
-		post.created_by = req.body.created_by;
+			post.created_by = req.body.created_by;
+			post.category = req.body.category;
+			post.title = req.body.title;
+			post.price  = req.body.price;
+			post.location = req.body.location;
+			post.zip = req.body.zip;
+			post.details = req.body.details;
+			post.link = req.body.link;
+			post.availability = req.body.availability;
+			post.images = req.body.images;
+			post.emailid = req.body.emailid;		
+		
 		post.save(function(err, post) {
 			if (err){
 				return res.send(500, err);
@@ -61,12 +71,21 @@ router.route('/posts/:id')
 	}) 
 	//updates specified post
 	.put(function(req, res){
+		console.log('Insert');
 		Post.findById(req.params.id, function(err, post){
 			if(err)
 				res.send(err);
 
 			post.created_by = req.body.created_by;
-			post.text = req.body.text;
+			post.title = req.body.title;
+			post.price  = req.body.price;
+			post.location = req.body.location;
+			post.zip = req.body.zip;
+			post.details = req.body.details;
+			post.link = req.body.link;
+			post.availability = req.body.availability;
+			post.imageUrl = req.body.imageUrl;
+			post.emailid = req.body.emailid;
 
 			post.save(function(err, post){
 				if(err)

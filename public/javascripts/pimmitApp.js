@@ -7,6 +7,8 @@ var app = angular.module('pimmitApp', ['ngRoute', 'ngResource']).run(function($r
     	$rootScope.authenticated = false;
     	$rootScope.current_user = '';
 	};
+
+
 });
 
 app.config(function($routeProvider){
@@ -16,6 +18,10 @@ app.config(function($routeProvider){
 			templateUrl: 'main.html',
 			controller: 'mainController'
 		})
+    .when('/postdetail', {
+      templateUrl: 'postdetail.html',
+      controller: 'mainController'
+    })
 		//the login display
 		.when('/login', {
 			templateUrl: 'login.html',
@@ -32,7 +38,7 @@ app.factory('postService', function($resource){
 	return $resource('/api/posts/:id');
 });
 
-app.controller('mainController', function(postService, $scope, $rootScope){
+app.controller('mainController', function(postService, $scope, $rootScope, $location){
 	$scope.posts = postService.query();
 	$scope.newPost = {created_by: '', text: '', created_at: ''};
 	
@@ -43,7 +49,23 @@ app.controller('mainController', function(postService, $scope, $rootScope){
 	    $scope.posts = postService.query();
 	    $scope.newPost = {created_by: '', text: '', created_at: ''};
 	  });
+    $location.path('/');
 	};
+
+	$scope.categories = [
+        {'lookupCode': '1', 'description': 'Tools and Gardening'},
+        {'lookupCode': '2', 'description': 'Sports and Outdoors'},
+        {'lookupCode': '3', 'description': 'Parties and Events'},
+        {'lookupCode': '4', 'description': 'Apparel and Fashion'},
+        {'lookupCode': '5', 'description': 'Kids and Babies'},
+        {'lookupCode': '6', 'description': 'Electronics'},
+        {'lookupCode': '7', 'description': 'Movies, Music, Books and Games'},
+        {'lookupCode': '8', 'description': 'Motor Vehicles'},
+        {'lookupCode': '9', 'description': 'Arts and Crafts'},
+        {'lookupCode': '10', 'description': 'Home and Appliances'},
+        {'lookupCode': '11', 'description': 'Office and Education'}
+    ];
+    
 });
 
 app.controller('authController', function($scope, $rootScope, $http, $location){
@@ -55,7 +77,7 @@ app.controller('authController', function($scope, $rootScope, $http, $location){
       if(data.state == 'success'){
         $rootScope.authenticated = true;
         $rootScope.current_user = data.user.username;
-        $location.path('/');
+        $location.path('/postdetail');
       }
       else{
         $scope.error_message = data.message;
