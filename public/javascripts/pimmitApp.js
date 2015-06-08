@@ -22,6 +22,10 @@ app.config(function($routeProvider){
       templateUrl: 'postdetail.html',
       controller: 'mainController'
     })
+    .when('/posthome', {
+      templateUrl: 'posthome.html',
+      controller: 'mainController'
+    })
 		//the login display
 		.when('/login', {
 			templateUrl: 'login.html',
