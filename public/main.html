@@ -1,5 +1,25 @@
+<div>
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-6">
+                        <form role="form">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="stuff (eg: Party tent, ladder, drill)">
+                                    <span class="input-group-btn">
+                                        <a class="btn btn-success" type="submit">Search</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+</div>
+
+
 <div id="post-stream">
 	<h4>Shared Pimmit List</h4>
+	<hr> 
 		<div class="post" ng-repeat="post in posts | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'"> 
 			<a href="">{{post.title}} - {{ post.price | currency }}/hr  ({{ post.location }}) </a>
 			<!--<small>Posted by @{{post.created_by}}</small>
