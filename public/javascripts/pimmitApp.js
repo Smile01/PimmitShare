@@ -102,3 +102,39 @@ app.controller('authController', function($scope, $rootScope, $http, $location){
     });
   };
 });
+
+
+
+
+app.controller('postRequestController', function(postService, $scope, $rootScope, $location){
+  //not done yet . need to implement 
+  $scope.posts = postService.query();
+  $scope.newPost = {created_by: '', text: '', created_at: ''};
+  
+  $scope.postRequest = function() {
+    $scope.newPost.created_by = $rootScope.current_user;
+    $scope.newPost.created_at = Date.now();
+    postService.save($scope.newPost, function(){
+      $scope.posts = postService.query();
+      $scope.newPost = {created_by: '', text: '', created_at: ''};
+    });
+    $location.path('/');
+  };
+
+  $scope.categories = [
+        {'lookupCode': '1', 'description': 'Tools and Gardening'},
+        {'lookupCode': '2', 'description': 'Sports and Outdoors'},
+        {'lookupCode': '3', 'description': 'Parties and Events'},
+        {'lookupCode': '4', 'description': 'Apparel and Fashion'},
+        {'lookupCode': '5', 'description': 'Kids and Babies'},
+        {'lookupCode': '6', 'description': 'Electronics'},
+        {'lookupCode': '7', 'description': 'Movies, Music, Books and Games'},
+        {'lookupCode': '8', 'description': 'Motor Vehicles'},
+        {'lookupCode': '9', 'description': 'Arts and Crafts'},
+        {'lookupCode': '10', 'description': 'Home and Appliances'},
+        {'lookupCode': '11', 'description': 'Office and Education'}
+    ];
+
+   
+    
+});

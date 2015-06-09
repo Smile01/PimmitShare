@@ -23,5 +23,13 @@ var userSchema = new mongoose.Schema({
 	created_at: {type: Date, default: Date.now}
 });
 
+
+var postRequestSchema = new mongoose.Schema({
+	requestUser: String , 
+	ownerUser: String, 
+	requested_at:  {type: Date, default: Date.now}   
+}); 
+
 mongoose.model('Post', postSchema);
 mongoose.model('User', userSchema);
+mongoose.model('PostRequest', postRequestSchema);
