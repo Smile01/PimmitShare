@@ -3,39 +3,12 @@
     <!-- <h4>{{current_user}} shares</h4> -->
 	 
                              <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-primary pull-right ">Post</button>
+                                <button type="submit" class="btn btn-primary pull-right ">Contact</button>
                             </div>
                             
                             <div class="form-group col-xs-12">
                                 <label class="control-label" for="category">Pick Category</label>
                             </div>
-                            <div class="form-group col-xs-12">
-                                <!-- <div class="form-group col-xs-6 "> --> 
-                                     <select  class="form-control" ng-model="category" ng-options="category.code as category.description for category in categories ">
-                                        <option value="1">Tools and Gardening</option>
-                                    </select>
-                                <!-- </div>  --> 
-                            </div> 
-                            <!-- <div class="form-group col-xs-12">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Tools and Gardening
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">Digging Tools</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">Cultivating Tools</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">Pruning Tools</a>
-                                    </li>
-                                    <li role="presentation" class="divider"></li>
-                                    <li role="presentation">
-                                        <a role="menuitem" tabindex="-1" href="#">Kneeling Equipment</a>
-                                    </li>
-                                </ul>
-                            </div> --> 
                             <div class="form-group col-xs-12 col-sm-4">
                                 <label class="control-label" for="title">Title</label>
                                 <input required class="form-control" id="title" placeholder="Pick a short but descriptive title" type="text" maxlength="200" ng-model="newPost.title">
@@ -73,13 +46,8 @@
                                 <input class="form-control" id="emailid" placeholder="Email Address" type="email" >
 								<input id="emailidagain" class="form-control" type="email" placeholder="Type Email Address Again" ng-model="newPost.email" >
                             </div>
-                           <!--  <div class="form-group col-xs-6">
-								<label class="control-label" for="emailid"> </label>
-                                <input id="emailidagain" class="form-control" type="email" placeholder="Type Email Address">
-                            </div>         -->                  
-			  <!-- <input class="btn submit-btn pull-right" type="submit" value="Post!" />   -->
 			  <div class="form-group col-xs-12">
-						<button type="submit" class="btn btn-primary pull-right">Post</button>
+						<button type="submit" class="btn btn-primary pull-right">Contact</button>
 
 			  </div> 		   
   </form>

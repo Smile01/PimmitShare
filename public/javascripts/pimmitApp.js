@@ -26,6 +26,10 @@ app.config(function($routeProvider){
       templateUrl: 'posthome.html',
       controller: 'mainController'
     })
+    .when('/postrequest', {
+      templateUrl: 'postrequest.html',
+      controller: 'postRequestController'
+    })
 		//the login display
 		.when('/login', {
 			templateUrl: 'login.html',
@@ -120,21 +124,6 @@ app.controller('postRequestController', function(postService, $scope, $rootScope
     });
     $location.path('/');
   };
-
-  $scope.categories = [
-        {'lookupCode': '1', 'description': 'Tools and Gardening'},
-        {'lookupCode': '2', 'description': 'Sports and Outdoors'},
-        {'lookupCode': '3', 'description': 'Parties and Events'},
-        {'lookupCode': '4', 'description': 'Apparel and Fashion'},
-        {'lookupCode': '5', 'description': 'Kids and Babies'},
-        {'lookupCode': '6', 'description': 'Electronics'},
-        {'lookupCode': '7', 'description': 'Movies, Music, Books and Games'},
-        {'lookupCode': '8', 'description': 'Motor Vehicles'},
-        {'lookupCode': '9', 'description': 'Arts and Crafts'},
-        {'lookupCode': '10', 'description': 'Home and Appliances'},
-        {'lookupCode': '11', 'description': 'Office and Education'}
-    ];
-
-   
+ 
     
 });
