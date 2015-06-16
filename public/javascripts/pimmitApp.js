@@ -26,6 +26,10 @@ app.config(function($routeProvider){
       templateUrl: 'posthome.html',
       controller: 'mainController'
     })
+    .when('/postrequest', {
+      templateUrl: 'postrequest.html',
+      controller: 'postRequestController'
+    })
 		//the login display
 		.when('/login', {
 			templateUrl: 'login.html',
@@ -101,4 +105,25 @@ app.controller('authController', function($scope, $rootScope, $http, $location){
       }
     });
   };
+});
+
+
+
+
+app.controller('postRequestController', function(postService, $scope, $rootScope, $location){
+  //not done yet . need to implement 
+  $scope.posts = postService.query();
+  $scope.newPost = {created_by: '', text: '', created_at: ''};
+  
+  $scope.postRequest = function() {
+    $scope.newPost.created_by = $rootScope.current_user;
+    $scope.newPost.created_at = Date.now();
+    postService.save($scope.newPost, function(){
+      $scope.posts = postService.query();
+      $scope.newPost = {created_by: '', text: '', created_at: ''};
+    });
+    $location.path('/');
+  };
+ 
+    
 });

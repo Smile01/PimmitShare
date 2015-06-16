@@ -1,0 +1,54 @@
+<div class="clearfix">
+  <form ng-Submit="post()" ng-show="authenticated">
+    <!-- <h4>{{current_user}} shares</h4> -->
+	 
+                             <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-primary pull-right ">Contact</button>
+                            </div>
+                            
+                            <div class="form-group col-xs-12">
+                                <label class="control-label" for="category">Pick Category</label>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-4">
+                                <label class="control-label" for="title">Title</label>
+                                <input required class="form-control" id="title" placeholder="Pick a short but descriptive title" type="text" maxlength="200" ng-model="newPost.title">
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-2">
+                                <label class="control-label" for="price">Price</label>
+                                <input required class="form-control" id="price" placeholder="$" type="number" ng-model="newPost.price">
+                            </div>
+                            <div class="form-group col-xs-6 col-sm-4">
+                                <label class="control-label" for="location">Location</label>
+                                <input required class="form-control" id="location" placeholder="Cross Streets" type="text" ng-model="newPost.location" >
+                            </div>
+                            <div class="form-group col-xs-6 col-sm-2">
+                                <label class="control-label" for="zip">Zip</label>
+                                <input required class="form-control" id="zip" placeholder="Zip" type="text" ng-model="newPost.zip">
+                            </div>
+                            <div class="form-group col-xs-12">
+                                <label class="control-label" for="details">Details</label>
+                                <textarea required class="form-control" id="details" placeholder="Provide more details: condition, make manufacture, model name number, serial number, size dimension etc" type="textarea" maxlength="500"  ng-model="newPost.details"  > </textarea> 
+                            </div>
+                             <div class="form-group col-xs-12">
+                                <label class="control-label" for="link">Link</label>
+                                <input required class="form-control" id="link" placeholder="Provide links to manufacture's website, online retailers (e.g. Amazon),review site, pictures etc. " type="text"  ng-model="newPost.link">
+                            </div> 
+                            <div class="form-group col-xs-12">
+                                <label class="control-label" for="availability">Availability</label>
+                                <input required class="form-control" id="availability" placeholder="Provide details of when is the best time for availability ( weekends, weekdays, evening etc )" type="text" maxlength="500"  ng-model="newPost.availability">
+                            </div>
+                            <div class="form-group col-xs-12">
+                                <label class="control-label" for="images">Add Images</label>
+                                <input required class="form-control" id="images" placeholder="You can also drop image files here to upload them (Upload best image first - it will be featured)" type="text" ng-model="newPost.images">
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label class="control-label" for="emailid">Contact</label>
+                                <input class="form-control" id="emailid" placeholder="Email Address" type="email" >
+								<input id="emailidagain" class="form-control" type="email" placeholder="Type Email Address Again" ng-model="newPost.email" >
+                            </div>
+			  <div class="form-group col-xs-12">
+						<button type="submit" class="btn btn-primary pull-right">Contact</button>
+
+			  </div> 		   
+  </form>
+  </div>
