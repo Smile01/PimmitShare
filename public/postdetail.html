@@ -9,11 +9,27 @@
                             <div class="form-group col-xs-12">
                                 <label class="control-label" for="category">Pick Category</label>
                             </div>
-                            <div class="form-group col-xs-12">
-                                <!-- <div class="form-group col-xs-6 "> --> 
-                                     <select  class="form-control" ng-model="category" ng-options="category.code as category.description for category in categories ">
-                                        <option value="1">Tools and Gardening</option>
-                                    </select>
+                            <div class="form-group col-xs-120">
+                                <!-- <div class="form-group col-xs-6 "> -->
+								<!--  
+            <select  class="form-control" ng-model="category" ng-options="category.code as category.description for category in categories ">   -->
+				
+			<select class="form-control" ng-model="catagory" ng-options="categories as categories.description for categories in categories">	
+</select>                                        
+<!--
+ <option value="2">Sports and Outdoors</option>
+ <option value="3">Parties and Events</option>
+<option value="4"> Apparel and Fashion</option>
+ <option value="5">Kids and Babies</option>
+<option value="6"> Electronics</option>
+ <option value="7">Movies, Music, Books and Games</option>
+ <option value="8">Motor Vehicles</option>
+ <option value="9"> Arts and Crafts</option>
+  <option value="10">Home and Appliances</option>
+ <option value="11"> Office and Education</option>  -->
+										
+																		
+                                   
                                 <!-- </div>  --> 
                             </div> 
                             <!-- <div class="form-group col-xs-12">
