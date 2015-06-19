@@ -2,19 +2,19 @@
   <form ng-Submit="post()" ng-show="authenticated">
     <!-- <h4>{{current_user}} shares</h4> -->
 	 
-                             <div class="form-group col-xs-12">
+                            <div class="form-group col-xs-12">
                                 <button type="submit" class="btn btn-primary pull-right ">Post</button>
                             </div>
                             
                             <div class="form-group col-xs-12">
                                 <label class="control-label" for="category">Pick Category</label>
                             </div>
-                            <div class="form-group col-xs-120">
+                            <div class="form-group col-xs-12">
                                 <!-- <div class="form-group col-xs-6 "> -->
 								<!--  
             <select  class="form-control" ng-model="category" ng-options="category.code as category.description for category in categories ">   -->
 				
-			<select class="form-control" ng-model="catagory" ng-options="categories as categories.description for categories in categories">	
+			<select class="form-control" ng-model="newPost.category" ng-options="category.lookupCode as category.description for category in categories">	<option>--</option>
 </select>                                        
 <!--
  <option value="2">Sports and Outdoors</option>
@@ -86,8 +86,8 @@
                             </div>
                             <div class="form-group col-xs-6">
                                 <label class="control-label" for="emailid">Contact</label>
-                                <input class="form-control" id="emailid" placeholder="Email Address" type="email" >
-								<input id="emailidagain" class="form-control" type="email" placeholder="Type Email Address Again" ng-model="newPost.email" >
+                                <input class="form-control" id="emailid" placeholder="Email Address" type="email" ng-model="newPost.emailid">
+								<input id="emailidagain" class="form-control" type="email" placeholder="Type Email Address Again" ng-model="newPost.emailidagain">
                             </div>
                            <!--  <div class="form-group col-xs-6">
 								<label class="control-label" for="emailid"> </label>

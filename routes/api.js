@@ -29,7 +29,7 @@ router.route('/posts')
 		console.log('debug post Insert');
 		var post = new Post();
 			post.created_by = req.body.created_by;
-			post.category = req.body.category;
+			post.category = req.body.category.lookupCode;
 			post.title = req.body.title;
 			post.price  = req.body.price;
 			post.location = req.body.location;
@@ -38,7 +38,8 @@ router.route('/posts')
 			post.link = req.body.link;
 			post.availability = req.body.availability;
 			post.images = req.body.images;
-			post.emailid = req.body.emailid;		
+			post.emailid = req.body.emailid;
+			post.emailidagain = req.body.emailidagain;		
 		
 		post.save(function(err, post) {
 			if (err){
